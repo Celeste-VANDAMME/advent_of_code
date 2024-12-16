@@ -2,6 +2,9 @@
 # ADVENT OF CODE
 #       2024
 #
+# Link:
+# https://adventofcode.com/2024/day/1
+# 
 # Program:
 #   #1-A + #1-B
 # 
