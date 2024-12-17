@@ -1,4 +1,5 @@
 
+
 # Céleste VANDAMME - Advent of Code
 
 
@@ -49,6 +50,10 @@ In each dedicated year page, you'll find the additional informations about each 
 - [Drazic MARTIN](https://github.com/drazicmartin), for introducing me to the advent of code website and always inspiring me to program ever more *(... also for being such a cool and reliable friend)*.
 
 
-### Resources (GitHub)
+### GitHub resources 
 - [Bogdanp](https://github.com/Bogdanp/awesome-advent-of-code) awesome **global advent of code repository list**.
 - [JRomero132](https://github.com/jromero132/advent-of-code)'s advent of code **inspiring markdown homepage**.
+
+
+### Websites
+- [StackEdit.io](https://stackedit.io/), for being such a nice and well tuned MarkDown online editor *(definitely has been used to create everything you've been reading up until now!)*
