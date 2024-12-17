@@ -37,7 +37,7 @@ The ultimate goal of the adventure is to **get 50 stars**, each day giving 2 sta
 
 In each dedicated year page, you'll find the additional informations about each programs I've created, including their **individual time of execution**.
 
-> [!NOTE]
+> [!IMPORTANT]
 > I comment **A LOT** my programs. I want to make sure I can still understand them after years...\
 >  So, feel free to give it a look. ;)
 
