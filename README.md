@@ -57,3 +57,4 @@ In each dedicated year page, you'll find the additional informations about each 
 
 ### Websites
 - [StackEdit.io](https://stackedit.io/), for being such a nice and well tuned MarkDown online editor *(definitely has been used to create everything you've been reading up until now!)*
+- [ChatGPT](https://chatgpt.com/), even though I'm not using it to find directly the solution, it's a good friend to have around. >:)
