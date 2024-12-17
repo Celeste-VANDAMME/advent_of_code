@@ -1,21 +1,54 @@
-# Celestial Code Chronicles 🌟🎄
 
-Welcome to the Celestial Code Chronicles repository! This is where I, Celeste, embark on the Advent of Code challenge, blending the magic of Christmas with the wonders of the astral realm.
+# Céleste VANDAMME - Advent of Code
 
-## 🎁 About the Project
 
-Advent of Code is an annual coding challenge that takes place during the month of December. Each day leading up to Christmas, a new programming puzzle is released, testing participants' problem-solving skills and coding prowess. In this repository, I'll be sharing my solutions and approaches to these challenges, aiming to spread some holiday cheer and celestial inspiration.
+## Introduction
+Welcome to my repository!\
+Here you'll find my programs I coded for the [Advent of Code](https://adventofcode.com/) challenges.
 
-## 🌠 Who is Celeste?
+As for a brief introduction:
 
-Greetings, fellow adventurers! I'm Celeste, your guide through this cosmic coding journey. By day, I'm a code wizard crafting digital wonders. By night, I'm a stargazer, drawing inspiration from the celestial bodies that adorn the night sky. Join me as we unravel the mysteries of the Advent of Code together, merging the festive spirit of Christmas with the boundless expanse of the cosmos.
+> I am a professional Data Engineer with `+4 years of experience`.
 
-## 🚀 Get Started
+> I've always been passioned about the IT world. \
+> I love discovering and mastering new video games: I've been [speedrunning](https://www.speedrun.com/fr-FR/users/Slaker) since 2023 too!
 
-To dive into the Celestial Code Chronicles and explore my solutions to the Advent of Code challenges, simply navigate to the respective folders for each day's puzzle. Feel free to explore, learn, and perhaps even contribute your own celestial insights to enhance our collective knowledge.
 
-## 🌟 Connect with Me
+## What is the Advent of Code adventure?
+> _Advent of Code_  is an Advent calendar of small programming puzzles for a variety of skill levels that can be solved in any programming language you like. People use them as interview prep, company training, university coursework, practice problems, a speed contest, or to challenge each other.
 
-Let's embark on this cosmic coding adventure together! Connect with me on GitHub ([@Celeste VANDAMME](https://github.com/Celeste-VANDAMME)) to stay updated on the latest developments, share your thoughts, or collaborate on future coding quests.
+> You don't need a computer science background to participate - just a little programming knowledge and some problem solving skills will get you pretty far. Nor do you need a fancy computer; every problem has a solution that completes in at most 15 seconds on ten-year-old hardware.
 
-May the stars guide us as we navigate the realms of code and imagination. Happy coding, and may your algorithms be as bright as the North Star!
+> *Eric Wastl, **AdventOfCode.com** (2024)*
+
+If you're interested, you can find more informations on the [official website](https://adventofcode.com/about)!
+
+
+## Overall achievements
+Once you've completed a challenge, you're granted a `⭐ STAR`. \
+The ultimate goal of the adventure is to **get 50 stars**, each day giving 2 stars at once.
+
+|  Year | Challenges | Stars | Completion | Dedicated page |
+|:-----:|:----------:|:-----:|:----------:|:----------------------------:|
+| 2015  | 5/25 | **10 ⭐** | 20% | (+) LINK |
+| 2024  | 1/25 | **2 ⭐** | 4% | (+) LINK |
+| `TOTAL` | `6/50` | `12 ⭐` | `12%` |  |
+
+In each dedicated year page, you'll find the additional informations about each programs I've created, including their **individual time of execution**.
+
+> [!NOTE]
+> I comment **A LOT** my programs. I want to make sure I can still understand them after years...\
+>  So, feel free to give it a look. ;)
+
+
+## Special Thanks
+
+
+### Amazing people!
+- [Eric WASTL](https://was.tl/), for creating [Advent of Code](https://adventofcode.com/) and staying always so creative with it for so many years!
+- [Drazic MARTIN](https://github.com/drazicmartin), for introducing me to the advent of code website and always inspiring me to program ever more *(... also for being such a cool and reliable friend)*.
+
+
+### Resources (GitHub)
+- [Bogdanp](https://github.com/Bogdanp/awesome-advent-of-code) awesome **global advent of code repository list**
+- [JRomero132](https://github.com/jromero132/advent-of-code)'s advent of code **inspiring markdown homepage**
