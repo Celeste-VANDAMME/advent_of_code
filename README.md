@@ -50,5 +50,5 @@ In each dedicated year page, you'll find the additional informations about each 
 
 
 ### Resources (GitHub)
-- [Bogdanp](https://github.com/Bogdanp/awesome-advent-of-code) awesome **global advent of code repository list**
-- [JRomero132](https://github.com/jromero132/advent-of-code)'s advent of code **inspiring markdown homepage**
+- [Bogdanp](https://github.com/Bogdanp/awesome-advent-of-code) awesome **global advent of code repository list**.
+- [JRomero132](https://github.com/jromero132/advent-of-code)'s advent of code **inspiring markdown homepage**.
