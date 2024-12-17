@@ -19,7 +19,7 @@
 # -------------------
 
 # --- 1. File opening
-with open("programs/2024_Python/01_Historian-Hysteria/input.txt", "r") as input_file:
+with open("programs/2024/Python/01_Historian-Hysteria/input.txt", "r") as input_file:
 
 
     # --- 2. 2 arrays creation
