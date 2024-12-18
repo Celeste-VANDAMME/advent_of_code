@@ -31,9 +31,9 @@ The ultimate goal of the adventure is to **get 50 stars**, each day giving 2 sta
 
 |  Year | Challenges | Stars | Completion | Dedicated page |
 |:-----:|:----------:|:-----:|:----------:|:----------------------------:|
-| 2015  | 5/25 | **10 ⭐** | 20% | (+) LINK |
+| 2015  | 5/25 | **11 ⭐** | 20% | (+) LINK |
 | 2024  | 1/25 | **2 ⭐** | 4% | (+) LINK |
-| `TOTAL` | `6/50` | `12 ⭐` | `12%` |  |
+| `TOTAL` | `6/50` | `13 ⭐` | `12%` |  |
 
 In each dedicated year page, you'll find the additional informations about each programs I've created, including their **individual time of execution**.
 
