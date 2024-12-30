@@ -135,7 +135,7 @@ def doDontCheck( inputText:str ) -> bool:
         return None
 
 
-def mul_detector( inputLines:list ) -> list:
+def mulDetector( inputLines:list ) -> list:
     """
     Scans a list of lines for valid `mul()` calls, collecting their arguments
     into a list of tuples. If the program is in a "don't" state, the function
@@ -254,7 +254,7 @@ def main():
     inputLines = inputReading()
     
     # -- 2. Scanning the input for valid "mul(...)" calls:
-    mulTotalCalls = mul_detector( inputLines )
+    mulTotalCalls = mulDetector( inputLines )
     
     # -- 3. Sum all the valid call results
     totalSum = mulCalculation( mulTotalCalls )
