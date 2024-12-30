@@ -24,11 +24,21 @@
 INPUT_FILE_DIR = "programs/2024/Python/03_Mull-It-Over/input.txt"
 IS_PROGRAM_LOOKING_FOR_DO_DONT = True # Set to "True" to activate the challenge B
 
+MUL_CALL = "mul("
+DO_CALL = "do()"
+DONT_CALL = "don't()"
 
 # --- B. FUNCTIONS
 
 def inputReading( ) -> list :
-    
+    """
+    Reads the input from the file specified by `INPUT_FILE_DIR` and returns
+    each line as an element in a list.
+
+    Returns:
+        list: A list of strings, where each string is a line from the input file.
+    """
+        
     rawInputLines = []
     
     with open(INPUT_FILE_DIR, "r") as input_file:
@@ -40,7 +50,20 @@ def inputReading( ) -> list :
 
 
 def findParameterLength( line:list, i:int) -> tuple[int,bool]:
-    
+    """
+    Scans the provided line for the length of the parameters inside the `mul()` call
+    starting at position `i`. It stops when the closing parenthesis `)` is found.
+
+    Args:
+        line (list): The line being scanned, which contains the `mul()` call.
+        i (int): The starting index of the `mul(` call in the line.
+
+    Returns:
+        tuple[int, bool]: A tuple where the first element is the length of the parameters
+        inside `mul()`, and the second element is a boolean indicating if a closing
+        parenthesis `)` was found.
+    """
+        
     # We can have a maximum of 8 letters folllowing...
     # As, we're here: 
     # "mul(" 
@@ -66,7 +89,16 @@ def findParameterLength( line:list, i:int) -> tuple[int,bool]:
 
 
 def argumentsIntCheck( argumentsInput:list ) -> bool:
-    
+    """
+    Checks if all elements in the provided list are numeric strings (digits only).
+
+    Args:
+        argumentsInput (list): A list of strings to check.
+
+    Returns:
+        bool: True if all elements in the list are numeric strings, False otherwise.
+    """
+        
     # We start with the assumption of the input being proper int
     areArgumentsInt = True
     
@@ -82,33 +114,49 @@ def argumentsIntCheck( argumentsInput:list ) -> bool:
 
 
 def doDontCheck( inputText:str ) -> bool:
-    
-    # -- Variables for further check
-    doStringCheck   = "do()"
-    dontStringCheck = "don't()"
+    """
+    Checks if the given text matches the `do()` or `don't()` instructions.
+
+    Args:
+        inputText (str): The string to check.
+
+    Returns:
+        bool: True if the string is "do()", False if it is "don't()", and None if neither.
+    """
     
     # -- Condition checks
-    if inputText[:-3] == doStringCheck:
+    if inputText[:-3] == DO_CALL:
         return True
     
-    elif inputText == dontStringCheck:
+    elif inputText == DONT_CALL:
         return False
     
     else:
         return None
 
 
-def mul_detector( rawLines:list ) -> list:
-    
+def mul_detector( inputLines:list ) -> list:
+    """
+    Scans a list of lines for valid `mul()` calls, collecting their arguments
+    into a list of tuples. If the program is in a "don't" state, the function
+    skips the `mul()` calls.
+
+    Args:
+        rawLines (list): A list of strings to scan for `mul()` calls.
+
+    Returns:
+        list: A list of tuples, where each tuple contains the two integer arguments
+        from a valid `mul()` call.
+    """
+        
     # Tried with a txt.split( "mul(" ) method on the whole text, but didn't go well.
     # I'll do it the slow way by scanning all the text. ;)
     
     isDoActive = True # We start with the do() effect active to begin with
     
     mulValidCalls = []
-    validMulCallText = "mul("
     
-    for line in rawLines:
+    for line in inputLines:
         for i in range(len(line)):
             
             doDontSegmentAnalyzed = line[i:i+7]     # we check for "do()" or "don't()" 
@@ -139,7 +187,7 @@ def mul_detector( rawLines:list ) -> list:
                 
                             
             # ---
-            if mulCallSegmentAnalyzed == validMulCallText:
+            if mulCallSegmentAnalyzed == MUL_CALL:
                 
                 # Then, we keep analyzing it for the upcoming max 8 letters!
                 mulCallParameterLength, isClosingParenthesisFound = findParameterLength(line, i)
@@ -175,7 +223,18 @@ def mul_detector( rawLines:list ) -> list:
 
 
 def mulCalculation( mulCalls:list ) -> int:
+    """
+    Multiplies each pair of integers in the provided list and returns the sum
+    of all the multiplication results.
 
+    Args:
+        mulCalls (list): A list of tuples, where each tuple contains two integers
+        to multiply.
+
+    Returns:
+        int: The total sum of the multiplication results.
+    """
+    
     # We set a counter for all the calls:
     totalSum = int(0)
     
@@ -192,10 +251,10 @@ def mulCalculation( mulCalls:list ) -> int:
 def main():
     
     # -- 1. Input read    
-    rawLines = inputReading()
+    inputLines = inputReading()
     
     # -- 2. Scanning the input for valid "mul(...)" calls:
-    mulTotalCalls = mul_detector( rawLines )
+    mulTotalCalls = mul_detector( inputLines )
     
     # -- 3. Sum all the valid call results
     totalSum = mulCalculation( mulTotalCalls )
