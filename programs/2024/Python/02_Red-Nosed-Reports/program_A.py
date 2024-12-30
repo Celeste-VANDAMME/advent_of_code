@@ -6,7 +6,7 @@
 # https://adventofcode.com/2024/day/2
 # 
 # Program:
-#   #1-A
+#   #2-A
 # 
 # Program title:
 #   Red-Nosed Reports

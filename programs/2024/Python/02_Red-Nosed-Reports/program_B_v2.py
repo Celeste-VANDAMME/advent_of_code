@@ -6,7 +6,7 @@
 # https://adventofcode.com/2024/day/2
 # 
 # Program:
-#   #1-B (v. 2)
+#   #2-B (v. 2)
 # 
 # Program title:
 #   Red-Nosed Reports
@@ -28,26 +28,39 @@ isDampenerActive = True
 
 # --- B. FUNCTIONS
 
-def safetyCheckRule_1( report ):
+def reportTrend( report:list ) -> bool :
+    
+    trendMeter = int( 0 )
+    
+    # - a. Checking the whole list to get the trend
+    for i in range( len(report[:-1]) ):
+        
+        if( report[i] < report[i+1] ):
+            trendMeter += 1
+            
+        if( report[i] > report[i+1] ):
+            trendMeter -= 1
+        
+    # Now that we've been through the whole list, we have the trend
+    isIncreasing = (trendMeter > 0)
+        
+    if trendMeter == 0:
+        return None
+        # raise ValueError("Trend=0, report=", report )
+    
+    return isIncreasing    
+    
+
+def safetyCheckRule_1( report:list ) -> bool:
     
     isIncreasing = None # BOOLEAN: Is the report increasing/decreasing?
     isRuleChecked = True # BOOLEAN: is the whole rule checked?
     
-    # - a. Getting the trend on the 2 first elements
-    if  ( report[0] < report[1] ):
-        isIncreasing = True
+    # - a. Checking the whole list to get the trend
+    isIncreasing = reportTrend( report )
     
-    elif( report[0] > report[1] ):
-        isIncreasing = False
-    
-    else: # the value are equals!
-        isRuleChecked = False
-    
-    
-    # Once we're done with the global check, we report the issue:
-    if( not(isRuleChecked) ):
-        # print("[!] Rule #1: 2 first elements were equal. Report:", report)
-        return False
+    if isIncreasing is None:
+        return False # In case we have a nullifying trend
     
     
     # - b. Checking the trend for the whole list now (we stop at the n-1 element)!
@@ -118,20 +131,14 @@ def dampenerRule_1( input_report ):
     report = input_report.copy()    # Copying the original report before modifying it
     hasDampenerApplied = False      # BOOL: have we applied the dampering effect?
     
-    # - a. Getting the trend on the 2 first elements
-    if  ( report[0] < report[1] ):
-        isIncreasing = True
+    # - a. Checking the whole list to get the trend
+    isIncreasing = reportTrend( report )
     
-    elif( report[0] > report[1] ):
-        isIncreasing = False
-    
-    else: # the value are equals!
-        # Without even checking the whole list, we've already found an error!
-        # Thus, we fix it here directly.
+    if isIncreasing is None:
+        # In case we have a nullifying trend
+        # We expect it to be unfixable.
         
-        # We get ride of the second element of the list (could have been the 1st).
-        report.pop(1)
-        hasDampenerApplied = True
+        return report, hasDampenerApplied
     
     
     # - b. Now checking where the trend has been broken!
@@ -241,7 +248,7 @@ def main():
     reports_data    = [] # This will hold all the reports, line by line
     report_buffer   = [] # This will be only used to construct the "reports" array
 
-    with open("programs/2024/Python/02_Red-Nosed-Reports/sample 2.txt", "r") as input_file:
+    with open("programs/2024/Python/02_Red-Nosed-Reports/sample.txt", "r") as input_file:
         
         for line in input_file:
             
