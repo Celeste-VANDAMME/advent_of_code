@@ -42,7 +42,14 @@ def inputReading( ) -> list :
     
         for line in input_file:
             rawInputLines.append( line )
-        
+    
+    
+    # Let's remove the "\n" out of the file
+    for i in range( len(rawInputLines) ):
+        rawInputLines[i] = rawInputLines[i].replace( "\n", "" )
+    
+    
+    # The lines have properly been read
     return rawInputLines
 
 
