@@ -7,17 +7,32 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-
+  build-and-run:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Compile and Run all C programs in the 'program' folder
+      run: |
+        # Check if any .c files exist to avoid errors
+        if ! ls program/*.c 1> /dev/null 2>&1; then
+          echo "No .c files found in 'program' directory. Skipping."
+          exit 0
+        fi
+
+        # Loop through each .c file in the 'program' directory
+        for c_file in program/*.c; do
+          # Create a unique name for the executable from the C file name
+          # For example, "program/app.c" becomes "app_executable"
+          executable_name=$(basename "$c_file" .c)_executable
+          
+          echo "---"
+          echo "Compiling: $c_file"
+          gcc "$c_file" -o "$executable_name"
+          
+          echo "Running: ./${executable_name}"
+          ./"$executable_name"
+          echo "---"
+        done
