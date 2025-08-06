@@ -166,7 +166,7 @@ int main() {
     const int orderLength = loopCounter ;
     
     // Direction:
-    int directionMapping[256] = {O} ; // We set a table large enough that contains all ASCII usual letters.
+    int directionMapping[256] = {0} ; // We set a table large enough that contains all ASCII usual letters.
     directionMapping['N'] = 1 ;
     directionMapping['E'] = 2 ;
     directionMapping['S'] = 3 ;
