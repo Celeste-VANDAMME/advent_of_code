@@ -11,32 +11,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Compile and Run all C programs recursively
-      run: |
-        # Enable recursive globbing (the ** pattern)
-        shopt -s globstar
+      - name: Compile and Run all C programs in programs/
+        run: |
+          # Enable recursive globbing
+          shopt -s globstar
 
-        # Check if any .c files exist in 'program' or its subdirectories
-        if ! ls program/**/*.c 1> /dev/null 2>&1; then
-          echo "No .c files found in 'program' or its subdirectories. Skipping."
-          exit 0
-        fi
+          cd programs
 
-        # Loop through each .c file found recursively
-        for c_file in program/**/*.c; do
-          # Create a unique executable name from the full file path to prevent
-          # name collisions if two subfolders have a file with the same name.
-          # Example: "program/day1/app.c" becomes "program_day1_app_executable"
-          executable_name=$(echo "$c_file" | sed 's|/|_|g; s|\.c$||')_executable
-          
-          echo "---"
-          echo "Compiling: $c_file"
-          gcc "$c_file" -o "$executable_name"
-          
-          echo "Running: ./${executable_name}"
-          ./"$executable_name"
-          echo "---"
-        done
+          # Check if any .c files exist under this folder
+          if ! ls **/*.c 1> /dev/null 2>&1; then
+            echo "No .c files found in 'programs'. Skipping."
+            exit 0
+          fi
+
+          # Loop through each .c file
+          for c_file in **/*.c; do
+            # Create a unique executable name from the relative path
+            executable_name=$(echo "$c_file" | sed 's|/|_|g; s|\.c$||')_exec
+
+            echo "---"
+            echo "Compiling: $c_file"
+            gcc "$c_file" -o "$executable_name"
+
+            echo "Running: ./${executable_name}"
+            ./"$executable_name"
+            echo "---"
+          done
