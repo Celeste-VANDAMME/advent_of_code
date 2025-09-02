@@ -18,8 +18,8 @@ typedef struct Instruction {
 
 // todo: describe here
 typedef struct Position {
-    int x  ;
-    int y  ;
+    int x ;
+    int y ;
     char facingDirection ; // 'N', 'E', 'S', 'W'
     
 } Position ;
@@ -166,16 +166,24 @@ int main() {
     const int orderLength = loopCounter ;
     
     // Direction:
-    int directionMapping[256] = {0} ; // We set a table large enough that contains all ASCII usual letters.
-    directionMapping['N'] = 1 ;
-    directionMapping['E'] = 2 ;
-    directionMapping['S'] = 3 ;
-    directionMapping['W'] = 4 ;
+    int directionMapping_char[256]  = {0} ; // We set a table large enough that contains all ASCII usual letters.
+    directionMapping_char['N']      = 1 ;
+    directionMapping_char['E']      = 2 ;
+    directionMapping_char['S']      = 3 ;
+    directionMapping_char['W']      = 4 ;
+    
+    char directionMapping_int[5]    = {0} ;
+    directionMapping_int[1]         = 'N' ;
+    directionMapping_int[2]         = 'E' ;
+    directionMapping_int[3]         = 'S' ;
+    directionMapping_int[4]         = 'W' ;
+    
     
     
     
     for(i=0; i<orderLength; i++){
         // 1. Pole facing update
+        
         
         
         // 2. Distance calculation
